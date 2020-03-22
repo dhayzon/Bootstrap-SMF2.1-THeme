@@ -316,14 +316,11 @@ function template_body_above()
 		</div> ';
 	 	// Show the menu here, according to the menu sub template, followed by the navigation tree.
 	// Load mobile menu here
- 	  
-	 
-	  template_menu();
-	
-	// Show the  linktree
-	
-	theme_linktree();
-	echo'
+		template_menu(); 
+	// Show the  linktree 
+		theme_linktree();
+
+		echo'
 	<div id="wrapper">';  
 
 	// The main content should go here.
