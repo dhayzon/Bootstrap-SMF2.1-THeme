@@ -325,7 +325,7 @@ mark,
   padding: 0.2em;
   background-color: #fcf8e3; }
 
-.list-unstyled {
+.list-unstyled, #admin_content #visible_boards ul {
   padding-left: 0;
   list-style: none; }
 
@@ -3817,11 +3817,6 @@ dl.settings img {
   vertical-align: middle; }
 
 /* a general table class */
-table.table_grid {
-  border-collapse: collapse;
-  margin: 1px 0 5px 0;
-  width: 100%; }
-
 table.table_grid td {
   padding: 3px; }
 
@@ -4433,6 +4428,16 @@ dl.register_form dd {
 
 #manage_boards .sub_bar .subbg {
   padding: .5rem .5rem   0 .5rem; }
+
+#admin_content #header_list_integration_hooks_hook_name select {
+  margin: 0 !important; }
+
+#admin_content > .flow_auto {
+  margin-left: 15px; }
+
+#admin_content .table_grid {
+  width: 97%;
+  margin: 12px auto; }
 
 #admin_content .cat_bar .catbg {
   padding: .5rem 0;
@@ -8923,7 +8928,7 @@ input[type="button"].btn-block {
     border-bottom-right-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem; }
 
-.card-body, #admin_content #manage_boards, .popup_window .popup_content, #upshrink_stats, #quickreply .cat_bar + #quickreply_options, #profileview, #admin_content > .windowbg, #admin_content > .information, #admin_content > #admin_form_wrapper, #admin_content > form, #forumposts .post {
+.card-body, #admin_content > #manage_maintenance, #admin_content #manage_boards, .popup_window .popup_content, #upshrink_stats, #quickreply .cat_bar + #quickreply_options, #profileview, #admin_content > .windowbg, #admin_content > .information, #admin_content > #admin_form_wrapper, #admin_content > form, #forumposts .post {
   flex: 1 1 auto;
   padding: 1.25rem; }
 
