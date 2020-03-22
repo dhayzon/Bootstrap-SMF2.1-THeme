@@ -297,7 +297,8 @@ function template_body_above()
 
 		echo '
 		<div id="header">
-			<div class="inner_wrap row no-gutters">
+		<div class="container">
+			<div class="row no-gutters">
 			<div class="col-12 col-md-7 ">
 			<h1 class="forumtitle">
 				<a id="top" href="', $scripturl, '">', empty($context['header_logo_url_html_safe']) ? $context['forum_name_html_safe'] : '<img src="' . $context['header_logo_url_html_safe'] . '" alt="' . $context['forum_name_html_safe'] . '">', '</a>
@@ -309,28 +310,25 @@ function template_body_above()
 			echo'</div>   
 			';  
 			
-		echo '</div>  
+		echo '
+				</div>  
+			</div>  
 		</div> ';
 	 	// Show the menu here, according to the menu sub template, followed by the navigation tree.
 	// Load mobile menu here
  	  
-		echo ' 
-		<nav id="main_menu">
-		', template_menu(), '
-		</nav>';
+	 
+	  template_menu();
 	
 	// Show the  linktree
 	
 	theme_linktree();
 	echo'
-	<div id="wrapper"  class="p-1  p-md-0">'; 
-
-
- 
+	<div id="wrapper">';  
 
 	// The main content should go here.
 	echo '
-		<div id="content_section">
+		<div id="content_section"   class="container">
 			<div id="main_content_section">';
 }
 
@@ -404,7 +402,7 @@ function theme_linktree($force_show = false)
 	if (empty($context['linktree']) || (!empty($context['dont_default_linktree']) && !$force_show))
 		return;
 	echo '<nav id="breadcrumb" aria-label="breadcrumb">
-			<div class="container p-0">
+			<div class="container">
 				<ol class="breadcrumb navigate_section">'; 
 
 	// Each tree item has a URL and name. Some may have extra_before and extra_after.
@@ -450,7 +448,9 @@ function template_menu()
 	global $context;
 
 	echo '
-	<div class="container px-0 py-1">
+	<nav id="main_menu">
+
+	<div class="container">
 		<ul class="nav nav-tabs"> ';
 
 	// Note: Menu markup has been cleaned up to remove unnecessary spans and classes.
@@ -505,8 +505,9 @@ function template_menu()
 	}
 
 	echo ' 
-		</ul><!-- .nav -->
-	</div><!-- .container -->';
+		</ul>
+	  </div><!-- .container -->
+	</nav><!-- .nav -->';
 }
 
 /**

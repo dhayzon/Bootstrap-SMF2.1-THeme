@@ -19,7 +19,7 @@ body {
   font-size: 0.82rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #202124;
+  color: #717171;
   text-align: left;
   background-color: #fff; }
 
@@ -1365,7 +1365,7 @@ button.bg-dark:focus {
 .flex-column-reverse {
   flex-direction: column-reverse !important; }
 
-.flex-wrap {
+.flex-wrap, .pagination, .pagelinks, #recent .pagesection, .pagesection > span:first-of-type, .pagesection > .floatleft:first-of-type, #admin_content > form .pagesection {
   flex-wrap: wrap !important; }
 
 .flex-nowrap {
@@ -3407,7 +3407,7 @@ a.text-dark:hover, a.text-dark:focus {
   color: #121416 !important; }
 
 .text-body {
-  color: #202124 !important; }
+  color: #717171 !important; }
 
 .text-muted {
   color: #6c757d !important; }
@@ -3449,6 +3449,9 @@ a.text-dark:hover, a.text-dark:focus {
  */
 /* You can find detailed information at https://wiki.simplemachines.org/smf/Curve2_CSS
 /* Index */
+.pagination > span, .pagelinks > span, #recent .pagesection > span, .pagesection > span:first-of-type > span, .pagesection > .floatleft:first-of-type > span, #admin_content > form .pagesection > span {
+  margin-bottom: .5rem; }
+
 /* Use a consistent monospace font everywhere */
 .monospace, .bbc_code, .phpcode, pre, #error_log span.error_message {
   font-family: "DejaVu Sans Mono", Menlo, Monaco, Consolas, monospace; }
@@ -6154,9 +6157,6 @@ ul.post_options li {
 
 /* General Classes */
 /* Cat_bar / catbg */
-div.cat_bar {
-  padding: 0; }
-
 .cat_bar h3 {
   margin: 0; }
 
@@ -6554,6 +6554,9 @@ h3.config_hd {
 
 nav .dropdown-menu {
   z-index: 9999; }
+
+.dropdown-menu .main_icons {
+  padding-right: .5rem; }
 
 /* Some very big stuff? Dunno... */
 @media (min-width: 856px) and (max-width: 1024px) {
@@ -7095,7 +7098,7 @@ nav .dropdown-menu {
 .table, table {
   width: 100%;
   margin-bottom: 1rem;
-  color: #202124; }
+  color: #717171; }
   .table th, table th,
   .table td,
   table td {
@@ -7131,7 +7134,7 @@ nav .dropdown-menu {
   background-color: rgba(0, 0, 0, 0.05); }
 
 .table-hover tbody tr:hover {
-  color: #202124;
+  color: #717171;
   background-color: rgba(0, 0, 0, 0.075); }
 
 .table-link,
@@ -7436,7 +7439,7 @@ select.form-control:focus::-ms-value {
   padding-bottom: 0.375rem;
   margin-bottom: 0;
   line-height: 1.5;
-  color: #202124;
+  color: #717171;
   background-color: transparent;
   border: solid transparent;
   border-width: 1px 0; }
@@ -7757,7 +7760,7 @@ textarea.form-control, textarea {
 .btn, .button {
   display: inline-block;
   font-weight: 400;
-  color: #202124;
+  color: #717171;
   text-align: center;
   vertical-align: middle;
   user-select: none;
@@ -7772,7 +7775,7 @@ textarea.form-control, textarea {
     .btn, .button {
       transition: none; } }
   .btn:hover, .button:hover {
-    color: #202124;
+    color: #717171;
     text-decoration: none; }
   .btn:focus, .btn.focus, .button:focus, .button.focus {
     outline: 0;
@@ -8306,7 +8309,7 @@ input[type="button"].btn-block {
   padding: 0.5rem 0;
   margin: 0.125rem 0 0;
   font-size: 0.82rem;
-  color: #202124;
+  color: #717171;
   text-align: left;
   list-style: none;
   background-color: #fff;
@@ -9632,7 +9635,7 @@ input[type="button"].btn-block {
     text-decoration: none;
     background-color: #f8f9fa; }
   .list-group-item-action:active {
-    color: #202124;
+    color: #717171;
     background-color: #e9ecef; }
 
 .list-group-item, #admin_content > #admin_form_wrapper > form .cat_bar, #admin_content > #admin_form_wrapper > form > .windowbg, #likes > li, #forumposts .comment {
