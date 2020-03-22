@@ -3470,19 +3470,19 @@ input, button, select {
 input[type="number"] {
   padding-right: 0;
   /* Removes weird white space after arrows in some browsers */
-  width: calc(4ch + 15px + 0.8em); }
+  width: calc(4ch + 15px + 0.8em) !important; }
 
 input[type="number"][size="2"], input[type="number"][size="1"] {
-  width: calc(2ch + 15px + 0.8em); }
+  width: calc(2ch + 15px + 0.8em) !important; }
 
 input[type="number"][size="3"] {
-  width: calc(3ch + 15px + 0.8em); }
+  width: calc(3ch + 15px + 0.8em) !important; }
 
 input[type="number"][size="5"] {
-  width: calc(5ch + 15px + 0.8em); }
+  width: calc(5ch + 15px + 0.8em) !important; }
 
 input[type="number"][size="6"] {
-  width: calc(6ch + 15px + 0.8em); }
+  width: calc(6ch + 15px + 0.8em) !important; }
 
 select option {
   padding: 0 4px; }
@@ -4452,6 +4452,12 @@ dl.register_form dd {
 
 #admin_content .cat_bar .admin_search select {
   margin-left: .1rem; }
+
+#admin_content > form > .flow_auto {
+  display: flex;
+  justify-content: space-between; }
+  #admin_content > form > .flow_auto > .additional_row input[type="text"] {
+    margin-bottom: 1rem; }
 
 #admin_content > form > .pagesection {
   justify-content: space-between; }
@@ -7361,7 +7367,7 @@ nav .dropdown-menu {
   .table-responsive > .table-bordered {
     border: 0; }
 
-.form-control, textarea, input[type="text"], input[type="search"], input[type="password"], select {
+.form-control, input[type="number"], input[type="number"][size="2"], input[type="number"][size="1"], input[type="number"][size="3"], input[type="number"][size="5"], input[type="number"][size="6"], textarea, input[type="text"], input[type="search"], input[type="password"], select {
   display: block;
   width: 100%;
   height: calc(1.5em + 0.75rem + 2px);
@@ -7377,21 +7383,21 @@ nav .dropdown-menu {
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
   @media (prefers-reduced-motion: reduce) {
-    .form-control, textarea, input[type="text"], input[type="search"], input[type="password"], select {
+    .form-control, input[type="number"], input[type="number"][size="2"], input[type="number"][size="1"], input[type="number"][size="3"], input[type="number"][size="5"], input[type="number"][size="6"], textarea, input[type="text"], input[type="search"], input[type="password"], select {
       transition: none; } }
-  .form-control::-ms-expand, textarea::-ms-expand, input[type="text"]::-ms-expand, input[type="search"]::-ms-expand, input[type="password"]::-ms-expand, select::-ms-expand {
+  .form-control::-ms-expand, input[type="number"]::-ms-expand, input[size="2"][type="number"]::-ms-expand, input[size="1"][type="number"]::-ms-expand, input[size="3"][type="number"]::-ms-expand, input[size="5"][type="number"]::-ms-expand, input[size="6"][type="number"]::-ms-expand, textarea::-ms-expand, input[type="text"]::-ms-expand, input[type="search"]::-ms-expand, input[type="password"]::-ms-expand, select::-ms-expand {
     background-color: transparent;
     border: 0; }
-  .form-control:focus, textarea:focus, input[type="text"]:focus, input[type="search"]:focus, input[type="password"]:focus, select:focus {
+  .form-control:focus, input:focus[type="number"], textarea:focus, input[type="text"]:focus, input[type="search"]:focus, input[type="password"]:focus, select:focus {
     color: #495057;
     background-color: #fff;
     border-color: #80bdff;
     outline: 0;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 0 0.2rem rgba(0, 123, 255, 0.25); }
-  .form-control::placeholder, textarea::placeholder, input[type="text"]::placeholder, input[type="search"]::placeholder, input[type="password"]::placeholder, select::placeholder {
+  .form-control::placeholder, input[type="number"]::placeholder, input[size="2"][type="number"]::placeholder, input[size="1"][type="number"]::placeholder, input[size="3"][type="number"]::placeholder, input[size="5"][type="number"]::placeholder, input[size="6"][type="number"]::placeholder, textarea::placeholder, input[type="text"]::placeholder, input[type="search"]::placeholder, input[type="password"]::placeholder, select::placeholder {
     color: #6c757d;
     opacity: 1; }
-  .form-control:disabled, textarea:disabled, .form-control[readonly], textarea[readonly], input[type="text"]:disabled, input[type="text"][readonly], input[type="search"]:disabled, input[type="search"][readonly], input[type="password"]:disabled, input[type="password"][readonly], select:disabled, select[readonly] {
+  .form-control:disabled, input:disabled[type="number"], textarea:disabled, .form-control[readonly], input[readonly][type="number"], textarea[readonly], input[type="text"]:disabled, input[type="text"][readonly], input[type="search"]:disabled, input[type="search"][readonly], input[type="password"]:disabled, input[type="password"][readonly], select:disabled, select[readonly] {
     background-color: #e9ecef;
     opacity: 1; }
 
@@ -7522,20 +7528,22 @@ textarea.form-control, textarea {
   background-color: rgba(40, 167, 69, 0.9);
   border-radius: 0.25rem; }
 
-.was-validated .form-control:valid, .was-validated textarea:valid, .form-control.is-valid, textarea.is-valid {
+.was-validated .form-control:valid, .was-validated input:valid[type="number"], .was-validated textarea:valid, .form-control.is-valid, input.is-valid[type="number"], textarea.is-valid {
   border-color: #28a745;
   padding-right: calc(1.5em + 0.75rem);
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
   background-repeat: no-repeat;
   background-position: center right calc(0.375em + 0.1875rem);
   background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem); }
-  .was-validated .form-control:valid:focus, .was-validated textarea:valid:focus, .form-control.is-valid:focus, textarea.is-valid:focus {
+  .was-validated .form-control:valid:focus, .was-validated input:valid:focus[type="number"], .was-validated textarea:valid:focus, .form-control.is-valid:focus, input.is-valid:focus[type="number"], textarea.is-valid:focus {
     border-color: #28a745;
     box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25); }
-  .was-validated .form-control:valid ~ .valid-feedback, .was-validated textarea:valid ~ .valid-feedback,
+  .was-validated .form-control:valid ~ .valid-feedback, .was-validated input:valid[type="number"] ~ .valid-feedback, .was-validated textarea:valid ~ .valid-feedback,
   .was-validated .form-control:valid ~ .valid-tooltip,
-  .was-validated textarea:valid ~ .valid-tooltip, .form-control.is-valid ~ .valid-feedback, textarea.is-valid ~ .valid-feedback,
+  .was-validated input:valid[type="number"] ~ .valid-tooltip,
+  .was-validated textarea:valid ~ .valid-tooltip, .form-control.is-valid ~ .valid-feedback, input.is-valid[type="number"] ~ .valid-feedback, textarea.is-valid ~ .valid-feedback,
   .form-control.is-valid ~ .valid-tooltip,
+  input.is-valid[type="number"] ~ .valid-tooltip,
   textarea.is-valid ~ .valid-tooltip {
     display: block; }
 
@@ -7621,20 +7629,22 @@ textarea.form-control, textarea {
   background-color: rgba(220, 53, 69, 0.9);
   border-radius: 0.25rem; }
 
-.was-validated .form-control:invalid, .was-validated textarea:invalid, .form-control.is-invalid, textarea.is-invalid {
+.was-validated .form-control:invalid, .was-validated input:invalid[type="number"], .was-validated textarea:invalid, .form-control.is-invalid, input.is-invalid[type="number"], textarea.is-invalid {
   border-color: #dc3545;
   padding-right: calc(1.5em + 0.75rem);
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23dc3545' viewBox='-2 -2 7 7'%3e%3cpath stroke='%23dc3545' d='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E");
   background-repeat: no-repeat;
   background-position: center right calc(0.375em + 0.1875rem);
   background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem); }
-  .was-validated .form-control:invalid:focus, .was-validated textarea:invalid:focus, .form-control.is-invalid:focus, textarea.is-invalid:focus {
+  .was-validated .form-control:invalid:focus, .was-validated input:invalid:focus[type="number"], .was-validated textarea:invalid:focus, .form-control.is-invalid:focus, input.is-invalid:focus[type="number"], textarea.is-invalid:focus {
     border-color: #dc3545;
     box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25); }
-  .was-validated .form-control:invalid ~ .invalid-feedback, .was-validated textarea:invalid ~ .invalid-feedback,
+  .was-validated .form-control:invalid ~ .invalid-feedback, .was-validated input:invalid[type="number"] ~ .invalid-feedback, .was-validated textarea:invalid ~ .invalid-feedback,
   .was-validated .form-control:invalid ~ .invalid-tooltip,
-  .was-validated textarea:invalid ~ .invalid-tooltip, .form-control.is-invalid ~ .invalid-feedback, textarea.is-invalid ~ .invalid-feedback,
+  .was-validated input:invalid[type="number"] ~ .invalid-tooltip,
+  .was-validated textarea:invalid ~ .invalid-tooltip, .form-control.is-invalid ~ .invalid-feedback, input.is-invalid[type="number"] ~ .invalid-feedback, textarea.is-invalid ~ .invalid-feedback,
   .form-control.is-invalid ~ .invalid-tooltip,
+  input.is-invalid[type="number"] ~ .invalid-tooltip,
   textarea.is-invalid ~ .invalid-tooltip {
     display: block; }
 
@@ -7717,7 +7727,7 @@ textarea.form-control, textarea {
       flex-flow: row wrap;
       align-items: center;
       margin-bottom: 0; }
-    .form-inline .form-control, .form-inline textarea {
+    .form-inline .form-control, .form-inline input[type="number"], .form-inline textarea {
       display: inline-block;
       width: auto;
       vertical-align: middle; }
@@ -8474,7 +8484,7 @@ input[type="button"].btn-block {
   flex-wrap: wrap;
   align-items: stretch;
   width: 100%; }
-  .input-group > .form-control, .input-group > textarea,
+  .input-group > .form-control, .input-group > input[type="number"], .input-group > textarea,
   .input-group > .form-control-plaintext,
   .input-group > .custom-select,
   .input-group > .custom-file {
@@ -8482,35 +8492,40 @@ input[type="button"].btn-block {
     flex: 1 1 auto;
     width: 1%;
     margin-bottom: 0; }
-    .input-group > .form-control + .form-control, .input-group > textarea + .form-control, .input-group > .form-control + textarea, .input-group > textarea + textarea,
+    .input-group > .form-control + .form-control, .input-group > input[type="number"] + .form-control, .input-group > textarea + .form-control, .input-group > .form-control + input[type="number"], .input-group > input[type="number"] + input[type="number"], .input-group > textarea + input[type="number"], .input-group > textarea + input[type="number"][size="2"], .input-group > textarea + input[type="number"][size="1"], .input-group > textarea + input[type="number"][size="3"], .input-group > textarea + input[type="number"][size="5"], .input-group > textarea + input[type="number"][size="6"], .input-group > .form-control + textarea, .input-group > input[type="number"] + textarea, .input-group > input[type="number"][size="2"] + textarea, .input-group > input[type="number"][size="1"] + textarea, .input-group > input[type="number"][size="3"] + textarea, .input-group > input[type="number"][size="5"] + textarea, .input-group > input[type="number"][size="6"] + textarea, .input-group > textarea + textarea,
     .input-group > .form-control + .custom-select,
+    .input-group > input[type="number"] + .custom-select,
     .input-group > textarea + .custom-select,
     .input-group > .form-control + .custom-file,
+    .input-group > input[type="number"] + .custom-file,
     .input-group > textarea + .custom-file,
     .input-group > .form-control-plaintext + .form-control,
+    .input-group > .form-control-plaintext + input[type="number"],
     .input-group > .form-control-plaintext + textarea,
     .input-group > .form-control-plaintext + .custom-select,
     .input-group > .form-control-plaintext + .custom-file,
     .input-group > .custom-select + .form-control,
+    .input-group > .custom-select + input[type="number"],
     .input-group > .custom-select + textarea,
     .input-group > .custom-select + .custom-select,
     .input-group > .custom-select + .custom-file,
     .input-group > .custom-file + .form-control,
+    .input-group > .custom-file + input[type="number"],
     .input-group > .custom-file + textarea,
     .input-group > .custom-file + .custom-select,
     .input-group > .custom-file + .custom-file {
       margin-left: -1px; }
-  .input-group > .form-control:focus, .input-group > textarea:focus,
+  .input-group > .form-control:focus, .input-group > input:focus[type="number"], .input-group > textarea:focus,
   .input-group > .custom-select:focus,
   .input-group > .custom-file .custom-file-input:focus ~ .custom-file-label {
     z-index: 3; }
   .input-group > .custom-file .custom-file-input:focus {
     z-index: 4; }
-  .input-group > .form-control:not(:last-child), .input-group > textarea:not(:last-child),
+  .input-group > .form-control:not(:last-child), .input-group > input:not(:last-child)[type="number"], .input-group > textarea:not(:last-child),
   .input-group > .custom-select:not(:last-child) {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0; }
-  .input-group > .form-control:not(:first-child), .input-group > textarea:not(:first-child),
+  .input-group > .form-control:not(:first-child), .input-group > input:not(:first-child)[type="number"], .input-group > textarea:not(:first-child),
   .input-group > .custom-select:not(:first-child) {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0; }
@@ -8569,11 +8584,11 @@ input[type="button"].btn-block {
   .input-group-text input[type="checkbox"] {
     margin-top: 0; }
 
-.input-group-lg > .form-control:not(textarea), .input-group-lg > textarea:not(textarea),
+.input-group-lg > .form-control:not(textarea), .input-group-lg > input:not(textarea)[type="number"], .input-group-lg > textarea:not(textarea),
 .input-group-lg > .custom-select {
   height: calc(1.5em + 1rem + 2px); }
 
-.input-group-lg > .form-control, .input-group-lg > textarea,
+.input-group-lg > .form-control, .input-group-lg > input[type="number"], .input-group-lg > textarea,
 .input-group-lg > .custom-select,
 .input-group-lg > .input-group-prepend > .input-group-text,
 .input-group-lg > .input-group-append > .input-group-text,
@@ -8584,11 +8599,11 @@ input[type="button"].btn-block {
   line-height: 1.5;
   border-radius: 0.3rem; }
 
-.input-group-sm > .form-control:not(textarea), .input-group-sm > textarea:not(textarea),
+.input-group-sm > .form-control:not(textarea), .input-group-sm > input:not(textarea)[type="number"], .input-group-sm > textarea:not(textarea),
 .input-group-sm > .custom-select {
   height: calc(1.5em + 0.5rem + 2px); }
 
-.input-group-sm > .form-control, .input-group-sm > textarea,
+.input-group-sm > .form-control, .input-group-sm > input[type="number"], .input-group-sm > textarea,
 .input-group-sm > .custom-select,
 .input-group-sm > .input-group-prepend > .input-group-text,
 .input-group-sm > .input-group-append > .input-group-text,
