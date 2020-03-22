@@ -4438,12 +4438,14 @@ dl.register_form dd {
   padding: .5rem 0;
   font-weight: bold; }
 
-#admin_content .cat_bar .admin_search {
-  margin-bottom: .5rem; }
-  #admin_content .cat_bar .admin_search input {
-    margin-left: .1rem; }
-  #admin_content .cat_bar .admin_search select {
-    margin-left: .1rem; }
+#admin_content .cat_bar .admin_search input {
+  margin-left: .1rem; }
+
+#admin_content .cat_bar .admin_search select {
+  margin-left: .1rem; }
+
+#admin_content > form > .pagesection {
+  justify-content: space-between; }
 
 #admin_content .custom_field {
   margin-bottom: 15px; }
@@ -6630,24 +6632,13 @@ nav .dropdown-menu {
   /* Menu */
   .quickbuttons li:hover ul {
     display: none; }
-  /* General */
-  .action_home {
-    width: 100% !important; }
   #wrapper {
-    width: 100%;
-    border-left: 0;
-    border-right: 0;
-    border-radius: 0; }
-  #top_section {
-    padding-left: 0;
-    padding-right: 0; }
+    width: 100%; }
   #footer {
     padding: 10px; }
   #header {
     margin-left: 0;
     margin-right: 0; }
-  #upper_section, #inner_section, #content_section {
-    border-radius: 0; }
   #boardindex_table .stats {
     display: none; }
   .login {
@@ -8932,7 +8923,7 @@ input[type="button"].btn-block {
     border-bottom-right-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem; }
 
-.card-body, .popup_window .popup_content, #upshrink_stats, #quickreply .cat_bar + #quickreply_options, #profileview, #admin_content > .windowbg, #admin_content > .information, #admin_content > #admin_form_wrapper, #admin_content > form, #forumposts .post {
+.card-body, #admin_content #manage_boards, .popup_window .popup_content, #upshrink_stats, #quickreply .cat_bar + #quickreply_options, #profileview, #admin_content > .windowbg, #admin_content > .information, #admin_content > #admin_form_wrapper, #admin_content > form, #forumposts .post {
   flex: 1 1 auto;
   padding: 1.25rem; }
 
